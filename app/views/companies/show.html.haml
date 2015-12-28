@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @company.name
+%p
+  %b Description:
+  = @company.description
+%p
+  %b Slogan:
+  = @company.slogan
+%p
+  %b Logo:
+  = @company.logo
+%p
+  %b Clave:
+  = @company.clave
+
+= link_to 'Edit', edit_company_path(@company)
+\|
+= link_to 'Back', companies_path

@@ -1,0 +1,29 @@
+%h1 Listing companies
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Slogan
+      %th Logo
+      %th Clave
+      %th
+      %th
+      %th
+
+  %tbody
+    - @companies.each do |company|
+      %tr
+        %td= company.name
+        %td= company.description
+        %td= company.slogan
+        %td= company.logo
+        %td= company.clave
+        %td= link_to 'Show', company
+        %td= link_to 'Edit', edit_company_path(company)
+        %td= link_to 'Destroy', company, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Company', new_company_path

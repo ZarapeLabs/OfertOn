@@ -13,8 +13,10 @@
               =image_tag("3.jpg", class: "img-resposive")
             .item
               =image_tag("4.jpg", class: "img-resposive")
-          %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel", :role => "button"} ‹
-          %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel", :role => "button"} ›
+          %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel", :role => "button"}
+            %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
+          %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel", :role => "button"}
+            %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "true"}
         .caption-full
           %h2
             ¿Qu&eacute; es OfertOn?
@@ -37,7 +39,7 @@
           .col-md-4
             .jumbotron
               %h2
-                %span.glyphicon.glyphicon-filter
+                %span.glyphicon.glyphicon-heart
                 Filtros
               %p Puedes filtrar las ofertas y promociones por las categor&iacute;s de tu interes, para ver solo lo que a ti te interesa
           .col-md-4

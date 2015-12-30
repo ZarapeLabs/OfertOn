@@ -1,0 +1,13 @@
+-# add navigation links to this file
+- if user_signed_in?
+  %li
+    = link_to('Logout Company', destroy_user_session_path, :method => :delete)
+- else
+  %li
+    = link_to('Login User', new_user_session_path)
+- if company_signed_in?
+  %li
+    = link_to('Logout Company', destroy_company_session_path, :method => :delete)
+- else
+  %li
+    = link_to('Login Company', new_company_session_path)

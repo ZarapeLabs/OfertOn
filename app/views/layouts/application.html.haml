@@ -8,8 +8,41 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          =link_to "Inicio", root_path, class: "navbar-brand"
+        #navbar.navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li
+              =link_to "¿Cómo funciona?", funcionamiento_path
+              -#%a{:href => "#"} ¿C&oacute;mo funciona?
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              =link_to new_user_session_path do
+                %span.glyphicon.glyphicon-user
+                Entrar como cliente
+            %li
+              =link_to new_company_session_path do
+                %span.glyphicon.glyphicon-briefcase
+                Entrar como empresa
+
+    -#%main{:role => "main"}
+    = render 'layouts/messages'
+    = yield
+    .container
+      %hr/
+      / Footer
+      %footer
+        .row
+          .col-lg-12
+            %p Copyright © OfertOn 2015
+
+-#%header
+      -#.right
+      -#= render 'layouts/navigation_links'

@@ -66,17 +66,7 @@
                 %span.glyphicon.glyphicon-gift
                 Regalos
               %p Entre m&aacute;s compras realizas en OfertOn, m&aacute;s oportunidades tienes de llevarte sorpredentes regalos y ganar ofertas excluisvas
-        .row
-          %hr
-          .col-md-6
-            %h3.center-text ¿Estas listo para comenzar...?
-            =link_to "Registrate", "#", class: "btn btn-success btn-large"
-            %hr
-          .col-md-6
-            %h4.center-text ¿Tienes una empresa y quieres saber como incrementar tus ventas con OfertOn?
-            =link_to "Saber mas", "#", class: "btn btn-danger btn-large"
-            %hr
-          %hr
+        =render 'actions_botons'
 :javascript
   // Load this when the DOM is ready
   $(function(){

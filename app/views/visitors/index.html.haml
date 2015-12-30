@@ -1,0 +1,87 @@
+.container
+  .row
+    .col-md-12
+      .thumbnail
+        #myCarousel.carousel.slide{"data-ride" => "carousel"}
+          .carousel-inner{:role => "listbox"}
+            .item.active
+              =image_tag("1.jpg", class: "img-resposive")
+              -#%img{:src => "/images/1.png"}/
+            .item
+              =image_tag("2.jpg", class: "img-resposive")
+            .item
+              =image_tag("3.jpg", class: "img-resposive")
+            .item
+              =image_tag("4.jpg", class: "img-resposive")
+          %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel", :role => "button"} ‹
+          %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel", :role => "button"} ›
+        .caption-full
+          %h2
+            ¿Qu&eacute; es OfertOn?
+          %h4
+            OfertOn es una plataforma donde podr&aacute;s encontrar las mejores ofertas a tu alrededor para que no
+            te pierdas de ninguna de ellas. Adem&aacute;s entre m&aacute;s compras realizas a trav&eacute;s de OfertOn
+            m&aacute;s beneficios acumulas.
+      .well
+        .text-right
+          %a.btn.btn-success Descrubre Ofertas Ahora!
+        %hr/
+        %h3 Caracter&iacute;sticas
+        .row
+          .col-md-4
+            .jumbotron
+              %h2
+                %span.glyphicon.glyphicon-map-marker
+                Ubicaci&oacute;n
+              %p Usamos tu ubicaci&oacute;n para mostrate ofertas y promociones cerca del lugar donde te encuentres
+          .col-md-4
+            .jumbotron
+              %h2
+                %span.glyphicon.glyphicon-filter
+                Filtros
+              %p Puedes filtrar las ofertas y promociones por las categor&iacute;s de tu interes, para ver solo lo que a ti te interesa
+          .col-md-4
+            .jumbotron
+              %h2
+                %span.glyphicon.glyphicon-hourglass
+                Exclusividad
+              %p Descubre y aprovecha ofertas y promociones exclusivas para usuarios de OfertOn y de tiempo limitado!
+
+        .row
+          .col-md-4
+            .jumbotron
+              %h2
+                %span.glyphicon.glyphicon-piggy-bank
+                Ahorro
+              %p Ahorra dinero al hacer tus compras en los establecimientos que tienen promociones, te decimos cuanto ahorras en cada compra!
+          .col-md-4
+            .jumbotron
+              %h2
+                %span.glyphicon.glyphicon-share
+                Comparte
+              %p Puedes compartir al instante tus compras en redes sociales, o informar a tus amigos sobre una oferta que no deben dejar pasar
+          .col-md-4
+            .jumbotron
+              %h2
+                %span.glyphicon.glyphicon-gift
+                Regalos
+              %p Entre m&aacute;s compras realizas en OfertOn, m&aacute;s oportunidades tienes de llevarte sorpredentes regalos y ganar ofertas excluisvas
+        .row
+          %hr
+          .col-md-6
+            %h3.center-text ¿Estas listo para comenzar...?
+            =link_to "Registrate", "#", class: "btn btn-success btn-large"
+            %hr
+          .col-md-6
+            %h4.center-text ¿Tienes una empresa y quieres saber como incrementar tus ventas con OfertOn?
+            =link_to "Saber mas", "#", class: "btn btn-danger btn-large"
+            %hr
+          %hr
+:javascript
+  // Load this when the DOM is ready
+  $(function(){
+    // You used .myCarousel here.
+    // That's the class selector not the id selector,
+    // which is #myCarousel
+    $('#myCarousel').carousel();
+  });

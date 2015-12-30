@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :companies
+  devise_for :companies, controllers: {registrations: "registrations"}
   resources :companies
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|

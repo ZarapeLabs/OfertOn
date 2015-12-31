@@ -21,6 +21,8 @@
           %ul.nav.navbar-nav
             %li
               =link_to "¿Cómo funciona?", funcionamiento_path
+            %li
+              =link_to "Para Empresas", empresas_path
               -#%a{:href => "#"} ¿C&oacute;mo funciona?
           %ul.nav.navbar-nav.navbar-right
             %li
@@ -34,7 +36,8 @@
 
     -#%main{:role => "main"}
     = render 'layouts/messages'
-    = yield
+    .my-container
+      = yield
     .container
       %hr/
       / Footer

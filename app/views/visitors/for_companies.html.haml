@@ -1,5 +1,23 @@
-.my-container.container
+.container
   .row
+    .col-md-12
+      .thumbnail
+        #myCarousel.carousel.slide{"data-ride" => "carousel"}
+          .carousel-inner{:role => "listbox"}
+            .item.active
+              =image_tag("1.jpg", class: "img-resposive")
+              -#%img{:src => "/images/1.png"}/
+            .item
+              =image_tag("2.jpg", class: "img-resposive")
+            .item
+              =image_tag("3.jpg", class: "img-resposive")
+            .item
+              =image_tag("4.jpg", class: "img-resposive")
+          %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel", :role => "button"}
+            %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
+          %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel", :role => "button"}
+            %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "true"}
+
     .col-md-12
       %h2 ¿En que ayuda OfertOn a tu negocio?
       %p ¿Cuánto dinero gastas en publicitar un producto o servicio? ¿A cuántas de las personas que ven tu anuncio realmente les interesa? ¿Qué relación hay entre tus clientes y tu después de una compra? ¿Cómo motivas a tu cliente para que te recomiende?
@@ -15,7 +33,7 @@
             %h2
               %span.glyphicon.glyphicon-signal
               Seguimiento
-            %p Cada que se realiza una compra, puedes saber cuántas compras te ha hecho ese cliente, además, OfertOn te permite hacer promociones especificas a clientes recientes, enviarle un mensaje personalizado, realizar encuesta de satisfacción, etc. Puedes darle seguimiento a tu cliente después de la compra!         .col-md-4
+            %p Cada que se realiza una compra, puedes saber cuántas compras te ha hecho ese cliente, además, OfertOn te permite hacer promociones especificas a clientes recientes, enviarle un mensaje personalizado, realizar encuesta de satisfacción... etc. Ahora puedes darle seguimiento a tu cliente después de la compra!
         .col-md-4
           .jumbotron
             %h2

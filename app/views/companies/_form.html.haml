@@ -6,7 +6,10 @@
     = f.input :description
     = f.input :slogan
     = f.input :logo
-    = f.input :clave
-
+    %h3
+      Clave
+      = @company.clave
+    -#= f.input :clave
   .form-actions
+
     = f.button :submit

@@ -1,7 +1,11 @@
-%h1 Editing company
+.container
+  %h1 Tu empresa ha sido registrada con éxito, solo unos datos más...
+  %h4
+    Tu nueva clave es:
+    =@company.clave
+    , esta clave será tu identificador dentro de OfertOn... ¡Grábatela! también te la enviamos por email.
+  %h2
+    Completar registro de
+    =@company.name
+  = render 'form'
 
-= render 'form'
-
-= link_to 'Show', @company
-\|
-= link_to 'Back', companies_path

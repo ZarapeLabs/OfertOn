@@ -24,15 +24,7 @@
             %li
               =link_to "Para Empresas", empresas_path
               -#%a{:href => "#"} ¿C&oacute;mo funciona?
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              =link_to new_user_session_path do
-                %span.glyphicon.glyphicon-user
-                Entrar como cliente
-            %li
-              =link_to new_company_session_path do
-                %span.glyphicon.glyphicon-briefcase
-                Entrar como empresa
+          =render 'layouts/nav_links_for_auth'
 
     -#%main{:role => "main"}
     = render 'layouts/messages'

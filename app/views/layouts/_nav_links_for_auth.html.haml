@@ -1,8 +1,35 @@
-- if user_signed_in?
-  %li= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
-- else
-  %li= link_to 'Sign in', new_user_session_path
-  %li= link_to 'Sign up', new_user_registration_path
-- if user_signed_in?
-  - if current_user.try(:admin?)
-    %li= link_to 'Admin', '/admin'
+%ul.nav.navbar-nav.navbar-right
+  -if (user_signed_in? or company_signed_in?)
+    -if (user_signed_in?)
+      %li
+        =link_to user_path(current_user) do
+          %span.glyphicon.glyphicon-user
+          =current_user.name
+      -if current_user.try(:admin?)
+        %li
+          =link_to admin_root_path do
+            %span.glyphicon.glyphicon-dashboard
+            Admin
+      %li
+        =link_to destroy_user_session_path, :method => 'delete' do
+          %span.glyphicon.glyphicon-off
+          Salir
+    -elsif (company_signed_in?)
+      %li
+        =link_to company_path(current_company) do
+          %span.glyphicon.glyphicon-briefcase
+          =current_company.name
+      %li
+        =link_to destroy_company_session_path, :method => 'delete' do
+          %span.glyphicon.glyphicon-off
+          Salir
+  -else
+    %li
+      =link_to new_user_session_path do
+        %span.glyphicon.glyphicon-user
+        Entrar como cliente
+    %li
+      =link_to new_company_session_path do
+        %span.glyphicon.glyphicon-briefcase
+        Entrar como empresa
+

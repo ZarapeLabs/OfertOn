@@ -1,0 +1,15 @@
+= simple_form_for @company, :url => complete_company_path, :method => :put do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :description, label: "Descripción"
+    = f.input :slogan, label: "Slogan"
+    = f.input :logo, label: "Logotipo"
+    = f.hidden_field :completed, value: true
+    %h3
+      Clave
+      = @company.clave
+    -#= f.input :clave
+  .form-actions
+
+    = f.button :submit, "Actualizar Empresa"

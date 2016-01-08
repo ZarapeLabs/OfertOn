@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228201454) do
+ActiveRecord::Schema.define(version: 20160107180520) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151228201454) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.boolean  "completed"
   end
 
   add_index "companies", ["email"], name: "index_companies_on_email", unique: true

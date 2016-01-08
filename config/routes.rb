@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :companies, controllers: {registrations: "registrations"}
-  resources :companies
+  resources :companies do
+    member do
+      get :incomplete
+      put :complete
+    end
+  end
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource

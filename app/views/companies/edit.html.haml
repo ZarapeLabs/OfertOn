@@ -1,13 +1,6 @@
 .container
-  %h1 Tu empresa ha sido registrada con éxito, solo unos datos más...
-  %h4
-  .alert.alert-info{role: "alert"}
-    %span.glyphicon.glyphicon-info-sign{"aria-hidden" => "true"}
-    Tu nueva clave es:
-    %b=@company.clave
-    , esta clave será tu identificador dentro de OfertOn... ¡Grábatela! también te la enviamos por email.
   %h2
-    Completar registro de
+    Editar registro de
     =@company.name
   = render 'form'
 

@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :set_company, only: [:show, :edit, :update, :destroy, :incomplete, :complete]
+  before_action :is_company_complete?, only: [:show, :edit]
 
   # GET /companies
   # GET /companies.json
@@ -61,14 +62,43 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def incomplete
+    if @company.completed?
+      redirect_to @company
+    end
+  end
+
+  def complete
+    respond_to do |format|
+      if @company.update(company_params_for_completation)
+        format.html { redirect_to @company, notice: 'Tu empresa ha sido actualizada correctamente.' }
+        format.json { render :show, status: :ok, location: @company }
+      else
+        format.html { render :edit }
+        format.json { render json: @company.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       @company = Company.find(params[:id])
     end
 
+    def is_company_complete?
+      if !@company.completed?
+        redirect_to incomplete_company_path(@company)
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       params.require(:company).permit(:name, :description, :slogan, :logo)
+    end
+
+    def company_params_for_completation
+      params.require(:company).permit(:description, :slogan, :logo, :completed)
     end
 end
